@@ -5,28 +5,35 @@ const ctx = canvas.getContext("2d")
 const bloqSize = 28
 //mapa 
 const map = [
-    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-    [1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,2,1],
-    [1,0,1,1,0,1,1,1,0,1,0,1,1,1,0,1,1,0,1],
-    [1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1],
-    [1,0,1,1,0,1,1,1,0,0,0,1,1,1,0,1,1,0,1],
-    [1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1],
-    [1,1,1,1,0,1,1,1,0,1,0,1,1,1,0,1,1,1,1],
-    [1,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0,0,1],
-    [1,0,1,1,1,0,0,0,1,0,1,0,0,0,1,1,1,0,1],
-    [1,0,0,0,0,0,1,0,0,0,1,0,1,0,0,0,0,0,1],
-    [1,0,1,1,1,0,0,0,1,0,1,0,0,0,1,1,1,0,1],
-    [1,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0,0,1],
-    [1,1,1,1,0,1,1,1,0,1,0,1,1,1,0,1,1,1,1],
-    [1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1],
-    [1,0,1,1,0,1,1,1,0,0,0,1,1,1,0,1,1,0,1],
-    [1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1],
-    [1,0,1,1,0,1,1,1,0,1,0,1,1,1,0,1,1,0,1],
-    [1,2,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,2,1],
-    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+   //1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], //1
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1], //2
+    [1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1], //3
+    [1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1], //4
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], //5
+    [1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1], //6
+    [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1], //7
+    [1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1], //8
+    [1, 3, 3, 3, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 3, 3, 3, 1], //9
+    [1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 3, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1], //10
+    [1, 0, 0, 0, 0, 0, 0, 0, 1, 3, 3, 3, 1, 0, 0, 0, 0, 0, 0, 0, 1], //11
+    [1, 1, 1, 1, 1, 0, 1, 0, 1, 3, 3, 3, 1, 0, 1, 0, 1, 1, 1, 1, 1], //12
+    [1, 3, 3, 3, 1, 0, 1, 0, 1, 1, 3, 1, 1, 0, 1, 0, 1, 3, 3, 3, 1], //13
+    [1, 3, 3, 3, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 3, 3, 3, 1], //14
+    [1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1], //15
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], //16
+    [1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1], //17
+    [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1], //18
+    [1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1], //19
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], //20
+    [1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1], //21
+    [1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1], //22
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]  //23
 ]
 
-//DEFINIR PERSONAJES
+
+
+//PACMAN
 let pacman = {
     x: bloqSize * 1.5,
     y: bloqSize * 1.5,
@@ -38,7 +45,7 @@ let pacman = {
     dy: 0,
     speed: 1.3
 }
-//llamar teclas
+//controles de movimiento
 document.addEventListener("keydown", (e) =>{
     if (e.key === "ArrowRight") {
         pacman.dx = pacman.speed
@@ -91,32 +98,133 @@ function drawPac() {
     ctx.lineTo(pacman.x, pacman.y)
     ctx.fill()
 }
-//fantasmas
+//FANTASMAS
 class ghost {
-    constructor(x, y, color, speed, scatterCorner, size = 10) {
+    constructor(x, y, color, speed, name) {
         this.x = x * bloqSize + bloqSize / 2
         this.y = y * bloqSize + bloqSize / 2
-        this.size = size
-        this.speed = speed
         this.color = color
-        this.scatteCorner = scatterCorner
-        this.mode = "SCATTER"
+        this.speed = speed
+        this.name = name
         this.dx = 0
         this.dy = 0
+        this.mode = "CHASE" // o "SCATTER"
+        this.size = 12
+        this.frightened = false
+        this.dead = false
+        this.homeX = x * bloqSize + bloqSize / 2
+        this.homeY = y * bloqSize + bloqSize / 2
+    }
+
+    // Verifica si puede moverse a una coordenada
+    canMove(newX, newY) {
+        const col = Math.floor(newX / bloqSize)
+        const row = Math.floor(newY / bloqSize)
+        if (row < 0 || col < 0 || row >= map.length || col >= map[0].length) return false
+        return map[row][col] !== 1
+    }
+
+    // Decide hacia dónde moverse según el modo
+    getTarget(pacman, blinky) {
+        switch (this.name) {
+            case "blinky":
+                return { x: pacman.x, y: pacman.y }
+            case "pinky":
+                return { x: pacman.x + pacman.dx * bloqSize * 4, y: pacman.y + pacman.dy * bloqSize * 4 }
+            case "inky":
+                if (!blinky) return { x: pacman.x, y: pacman.y }
+                const vecX = (pacman.x + pacman.dx * bloqSize * 2) - blinky.x
+                const vecY = (pacman.y + pacman.dy * bloqSize * 2) - blinky.y
+                return { x: pacman.x + vecX, y: pacman.y + vecY }
+            case "clyde":
+                const dist = Math.hypot(this.x - pacman.x, this.y - pacman.y)
+                if (dist < bloqSize * 4)
+                    return { x: 0, y: canvas.height } // esquina inferior izquierda
+                else
+                    return { x: pacman.x, y: pacman.y }
+        }
+    }
+
+    // Cambia dirección según posibles caminos
+    chooseNewDirection(pacman, blinky) {
+        const dirs = [
+            { dx: 1, dy: 0 },
+            { dx: -1, dy: 0 },
+            { dx: 0, dy: 1 },
+            { dx: 0, dy: -1 }
+        ]
+
+        const valid = dirs.filter(d => {
+            const nx = this.x + d.dx * bloqSize
+            const ny = this.y + d.dy * bloqSize
+            return this.canMove(nx, ny)
+        })
+
+        if (valid.length === 0) return
+
+        const target = this.getTarget(pacman, blinky)
+        // Escoge la dirección que acerque más al objetivo
+        let best = valid[0]
+        let minDist = Infinity
+
+        valid.forEach(v => {
+            const nx = this.x + v.dx * bloqSize
+            const ny = this.y + v.dy * bloqSize
+            const dist = Math.hypot(nx - target.x, ny - target.y)
+            if (dist < minDist) {
+                minDist = dist
+                best = v
+            }
+        })
+
+        this.dx = best.dx
+        this.dy = best.dy
+    }
+
+    // Movimiento completo del fantasma
+    move(pacman, blinky) {
+        const newX = this.x + this.dx * this.speed
+        const newY = this.y + this.dy * this.speed
+
+        // Si puede avanzar, se mueve
+        if (this.canMove(newX, newY)) {
+            this.x = newX
+            this.y = newY
+
+            // Verificar si está centrado en una celda
+            const cellX = Math.round(this.x / bloqSize) * bloqSize + bloqSize / 2
+            const cellY = Math.round(this.y / bloqSize) * bloqSize + bloqSize / 2
+            const distX = Math.abs(this.x - cellX)
+            const distY = Math.abs(this.y - cellY)
+            const tolerance = 1.5
+
+            // Si está centrado, chance de girar
+            if (distX < tolerance && distY < tolerance) {
+                if (Math.random() < 0.2) this.chooseNewDirection(pacman, blinky)
+            }
+        } else {
+            // Si choca, cambia dirección
+            this.chooseNewDirection(pacman, blinky)
+        }
     }
 }
+
+
+//crear fantasmas
 const ghosts = [
-    //blinky
-    new ghost(9, 8, "red", 1.3, {x: map[0].length * bloqSize, y: 0}),
-    //pinky
-    new ghost(9, 9, "pink", 1.2, {x: 0, y: 0}),
-    //inky
-    new ghost(9, 10, "cyan", 1.1, {x: map[0].length * bloqSize, y: map.length * bloqSize}),
-    //clyde
-    new ghost(8, 9, "orange", 1.1, {x: 0, y: map.length * bloqSize})
+    new ghost(10, 12, "red", 1.3, "blinky"),
+    new ghost(10, 11, "pink", 1.2, "pinky"),
+    new ghost(10, 9, "cyan", 1.1, "inky"),
+    new ghost(9, 10, "orange", 1.1, "clyde")
 ]
 
-//DEFINIR INTERRACION
+// Inicializa su dirección después de crearlos
+ghosts.forEach(g => g.chooseNewDirection(pacman, ghosts[0]))
+ghosts.forEach(g => {
+  if (g.dx === 0 && g.dy === 0) g.dx = 1 // si no encontró dirección, que empiece a la derecha
+})
+
+//MAPA Y MOVIMIENTO
 function drawMap() {
     for (let row = 0; row < map.length; row++) {
         for (let col = 0; col < map[row].length; col++) {
@@ -148,19 +256,17 @@ function move(x, y) {
 }
 //centrar pacman
 function alignCenter() {
-    let r = pacman.size
+  const r = pacman.size
+  const targetY = Math.floor(pacman.y / bloqSize) * bloqSize + bloqSize / 2
+  const targetX = Math.floor(pacman.x / bloqSize) * bloqSize + bloqSize / 2
 
-    if (pacman.dx !== 0) {
-        let centerY = Math.floor(pacman.y / bloqSize) * bloqSize + bloqSize / 2
-        pacman.y += (centerY - pacman.y) * 0.5
-    }
-    if (pacman.dy !== 0) {
-        let centerX = Math.floor(pacman.x / bloqSize) * bloqSize + bloqSize / 2
-        pacman.x += (centerX - pacman.x) * 0.5
-
-    }
+  if (pacman.dx !== 0)
+      pacman.y += (targetY - pacman.y) * 0.3
+  if (pacman.dy !== 0)
+      pacman.x += (targetX - pacman.x) * 0.3
 }
-//puntos y score
+
+//PUNTOS Y SCORE
 let Score = 0
 const mapPoints = []
 const normalPoints = 10
@@ -216,7 +322,7 @@ function checkEatPoint() {
             if (distance < pacman.size + dot.size) {
                 dot.eaten = true
                 Score += dot.value
-                console.log("Punto Comido! score " + {Score})
+                console.log("Punto Comido! score: " + Score)
 
                 if (dot.isPowerPellete) {
                     activeModeSuper(8000)
@@ -228,6 +334,21 @@ function checkEatPoint() {
 //activar super
 function activeModeSuper(durationMs) {
     console.log("SUPERPODER ACTIVADO - Tiempo de duracion", durationMs / 1000, "segundos")
+
+    ghosts.forEach(g => {
+        g.frightened = true
+        g.color = "blue"
+    })
+
+    setTimeout(() => {
+        ghosts.forEach(g => {
+            g.frightened = false
+            g.color = (g.name === "blinky") ? "red":
+                      (g.name === "pinky") ? "pink":
+                      (g.name === "inky") ? "cyan": "orange" 
+        })
+        console.log("SUPERPODER TERMINADO")
+    }, durationMs)
 }
 //dibujar puntacion
 function drawScore() {
@@ -235,7 +356,8 @@ function drawScore() {
     ctx.font = "bold 15px Arial"
     ctx.fillText(`SCORE: ${Score}`, 1, bloqSize * 0.6)
 }
-// dibujar fantamas
+
+//DIBUJO DE FAMTAMAS
 function drawGhost() {
     ghosts.forEach(ghost => {
         ctx.fillStyle = ghost.color
@@ -268,9 +390,11 @@ function drawGhost() {
     })
 }
 
+//BUCLE PRINCIPAL
 startPoint()
 
-//EJECUCION DEL JUEGO
+let animationId
+
 function animation() {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
 
@@ -288,8 +412,33 @@ function animation() {
 
     checkEatPoint()
 
-    // ghost.forEach(g => g.move(pacman, ghost[0]))
+    ghosts.forEach(g => {
+        g.move(pacman, ghosts[0])
+    })
 
+    function checkCollisionGhost() {
+        ghosts.forEach(g => {
+            const dx = pacman.x - g.x
+            const dy = pacman.y - g.y
+            const dist = Math.sqrt(dx * dx + dy * dy)
+
+            if (dist < pacman.size + g.size) {
+                if (g.frightened) {
+                    g.dead = true
+                    Score += 200
+                    g.x = g.homeX
+                    g.y = g.homeY
+                    g.frightened = false
+                    g.color = "white"
+                    console.log(`${g.name.toUpperCase()} comido! +200`)
+                } else {
+                    console.log("Pac-Man ha muerto!")
+                }
+            }
+        })
+    }
+
+    checkCollisionGhost()
     drawMap()
     drawPoint()
     drawPac()
@@ -304,7 +453,25 @@ function animation() {
     }
     
     
-    requestAnimationFrame(animation)
+    animationId = requestAnimationFrame(animation)
+
+    ghosts.forEach(g => {
+        const dx = g.x - pacman.x
+        const dy = g.y - pacman.y
+        const dist  = Math.hypot(dx, dy)
+
+        if (dist < pacman.size + g.size - 3) {
+            cancelAnimationFrame(animationId)
+            console.log("¡Pac-Man fue atrapado por " + g.name + "!")
+            ctx.fillStyle = "white"
+            ctx.font = "20px Arial"
+            ctx.fillText("¡Pac-Man murió!", canvas.width / 2 - 70, canvas.height / 2)
+            setTimeout(() => {
+                location.reload() // reinicia la página
+            }, 2000)
+        }
+    })
+
 }
 
 animation()
